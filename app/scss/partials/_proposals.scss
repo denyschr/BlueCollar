@@ -1,0 +1,90 @@
+.proposals{
+	background-color: var(--yellow-orange);
+	margin-bottom: -50px;
+	&__inner{
+		padding-top: 150px;
+		@include small-desktop{
+			padding-top: 90px;
+		}
+		@include mobile{
+			padding-top: 60px;
+		}
+	}
+	&__top{
+		margin: 0 auto 37px;
+		max-width: 832px;
+		text-align: center;
+		@include small-tablet{
+			max-width: 100%;
+		}
+	}
+	&__caption::before{
+			background-image: url('../images/svg/gear-helmet.svg') !important;
+	}
+	&__title{
+		margin: 0 0 12px;
+	}
+	&__text{
+		margin: 0;
+		color: var(--blue-cloud) !important;
+	}
+}
+
+.proposals__content{
+	display: flex;
+	justify-content: space-between;
+	padding: 70px 60px;
+	background-color: var(--white);
+	box-shadow: -1px 6px 18px 0px rgba(0, 0, 0, 0.09);
+	@include small-desktop{
+		flex-direction: column;
+		justify-content: start;
+	}
+	@include small-tablet{
+		padding: 50px;
+	}
+	@include mobile{
+		padding: 30px;
+	}
+	&-box{
+		max-width: 549px;
+		margin-right: 25px;
+		@include small-desktop{
+			max-width: 100%;
+			margin-right: 0;
+			margin-bottom: 40px;
+		}
+	}
+	&-caption{
+		padding-left: 58px !important;
+		&::before{
+			background-image: url('../images/svg/apartment2.svg') !important;
+		}
+	}
+	&-title{
+		margin: 0 0 12px;
+	}
+	&-text{
+		margin: 0 0 10px;
+	}
+	&-btn{
+		margin-top: 17px;
+		max-width: 190px;
+		width: 100%;
+		padding: 19px 22px;
+		@include small-tablet{
+			padding: 15px 18px;
+		}
+	}
+	&-img{
+		margin: 12px 0 10px;
+		@include small-desktop{
+			margin: 0;
+		}
+		img{
+			@include small-desktop{
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+%ir-regular{
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+}
+%msh-regular{
+	font-family: 'Mulish', sans-serif;
+	font-weight: 400;
+}
+
+:root{
+	--content-width: 1200px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+	--white: #fff;
+	--blue-cloud: #1C2752;
+	--gray: #7E7E7E;
+	--yellow-orange: #FFB342;
+	--concrete: #F2F2F2;
+	--black: #222;
+	--wild-sand: #F4F4F4;
+	--alto: #D2D2D2;
+	--light-gray: #ddd;
+	--picton-blue: #3898EC;
+	--koromiko: #FFC368;
+	--east-bay: #4B557D;
+	--rhino: #2C3765;
+}

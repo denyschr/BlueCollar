@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-apartment-dims { width: 36px; height: 36px; }
+ .svg-apartment2-dims { width: 28px; height: 28px; }
+ .svg-arrow-left-dims { width: 50px; height: 50px; }
+ .svg-arrow-right-dims { width: 50px; height: 50px; }
+ .svg-bride-company-dims { width: 148px; height: 47px; }
+ .svg-building-company-dims { width: 183px; height: 52px; }
+ .svg-call-dims { width: 68px; height: 68px; }
+ .svg-call-white-bg-dims { width: 50px; height: 50px; }
+ .svg-checkmark-dims { width: 32px; height: 32px; }
+ .svg-conditioner-dims { width: 48px; height: 48px; }
+ .svg-construction-company-dims { width: 182px; height: 59px; }
+ .svg-cpmpany-company-dims { width: 211px; height: 56px; }
+ .svg-electricity-dims { width: 48px; height: 48px; }
+ .svg-facebook-dims { width: 19px; height: 18px; }
+ .svg-factory-dims { width: 34px; height: 34px; }
+ .svg-gear-dims { width: 30px; height: 29px; }
+ .svg-gear-helmet-dims { width: 23px; height: 27px; }
+ .svg-house-dims { width: 48px; height: 48px; }
+ .svg-instagram-dims { width: 18px; height: 19px; }
+ .svg-lock-dims { width: 48px; height: 48px; }
+ .svg-lodge-dims { width: 34px; height: 34px; }
+ .svg-logo-dims { width: 242px; height: 48px; }
+ .svg-mail-dims { width: 68px; height: 68px; }
+ .svg-notebook-dims { width: 22px; height: 27px; }
+ .svg-pinterest-dims { width: 19px; height: 19px; }
+ .svg-quote-dims { width: 55px; height: 55px; }
+ .svg-tools-dims { width: 48px; height: 48px; }
+ .svg-twitter-dims { width: 20px; height: 17px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="apartment">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#apartment" class="svg-apartment-dims" alt="apartment">
+                    </div>
+                    <h2>apartment, </h2>
+                </li>
+             <li title="apartment2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#apartment2" class="svg-apartment2-dims" alt="apartment2">
+                    </div>
+                    <h2>apartment2, </h2>
+                </li>
+             <li title="arrow-left">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#arrow-left" class="svg-arrow-left-dims" alt="arrow-left">
+                    </div>
+                    <h2>arrow-left, </h2>
+                </li>
+             <li title="arrow-right">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#arrow-right" class="svg-arrow-right-dims" alt="arrow-right">
+                    </div>
+                    <h2>arrow-right, </h2>
+                </li>
+             <li title="bride-company">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#bride-company" class="svg-bride-company-dims" alt="bride-company">
+                    </div>
+                    <h2>bride-company, </h2>
+                </li>
+             <li title="building-company">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#building-company" class="svg-building-company-dims" alt="building-company">
+                    </div>
+                    <h2>building-company, </h2>
+                </li>
+             <li title="call">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#call" class="svg-call-dims" alt="call">
+                    </div>
+                    <h2>call, </h2>
+                </li>
+             <li title="call-white-bg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#call-white-bg" class="svg-call-white-bg-dims" alt="call-white-bg">
+                    </div>
+                    <h2>call-white-bg, </h2>
+                </li>
+             <li title="checkmark">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#checkmark" class="svg-checkmark-dims" alt="checkmark">
+                    </div>
+                    <h2>checkmark, </h2>
+                </li>
+             <li title="conditioner">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#conditioner" class="svg-conditioner-dims" alt="conditioner">
+                    </div>
+                    <h2>conditioner, </h2>
+                </li>
+             <li title="construction-company">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#construction-company" class="svg-construction-company-dims" alt="construction-company">
+                    </div>
+                    <h2>construction-company, </h2>
+                </li>
+             <li title="cpmpany-company">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cpmpany-company" class="svg-cpmpany-company-dims" alt="cpmpany-company">
+                    </div>
+                    <h2>cpmpany-company, </h2>
+                </li>
+             <li title="electricity">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#electricity" class="svg-electricity-dims" alt="electricity">
+                    </div>
+                    <h2>electricity, </h2>
+                </li>
+             <li title="facebook">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#facebook" class="svg-facebook-dims" alt="facebook">
+                    </div>
+                    <h2>facebook, </h2>
+                </li>
+             <li title="factory">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#factory" class="svg-factory-dims" alt="factory">
+                    </div>
+                    <h2>factory, </h2>
+                </li>
+             <li title="gear">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#gear" class="svg-gear-dims" alt="gear">
+                    </div>
+                    <h2>gear, </h2>
+                </li>
+             <li title="gear-helmet">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#gear-helmet" class="svg-gear-helmet-dims" alt="gear-helmet">
+                    </div>
+                    <h2>gear-helmet, </h2>
+                </li>
+             <li title="house">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#house" class="svg-house-dims" alt="house">
+                    </div>
+                    <h2>house, </h2>
+                </li>
+             <li title="instagram">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#instagram" class="svg-instagram-dims" alt="instagram">
+                    </div>
+                    <h2>instagram, </h2>
+                </li>
+             <li title="lock">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#lock" class="svg-lock-dims" alt="lock">
+                    </div>
+                    <h2>lock, </h2>
+                </li>
+             <li title="lodge">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#lodge" class="svg-lodge-dims" alt="lodge">
+                    </div>
+                    <h2>lodge, </h2>
+                </li>
+             <li title="logo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#logo" class="svg-logo-dims" alt="logo">
+                    </div>
+                    <h2>logo, </h2>
+                </li>
+             <li title="mail">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#mail" class="svg-mail-dims" alt="mail">
+                    </div>
+                    <h2>mail, </h2>
+                </li>
+             <li title="notebook">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#notebook" class="svg-notebook-dims" alt="notebook">
+                    </div>
+                    <h2>notebook, </h2>
+                </li>
+             <li title="pinterest">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#pinterest" class="svg-pinterest-dims" alt="pinterest">
+                    </div>
+                    <h2>pinterest, </h2>
+                </li>
+             <li title="quote">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#quote" class="svg-quote-dims" alt="quote">
+                    </div>
+                    <h2>quote, </h2>
+                </li>
+             <li title="tools">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#tools" class="svg-tools-dims" alt="tools">
+                    </div>
+                    <h2>tools, </h2>
+                </li>
+             <li title="twitter">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#twitter" class="svg-twitter-dims" alt="twitter">
+                    </div>
+                    <h2>twitter, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Wed, 26 Jul 2023 12:51:55 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>

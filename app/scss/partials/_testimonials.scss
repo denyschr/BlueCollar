@@ -1,0 +1,136 @@
+.testimonials{
+	max-width: 591px;
+	margin-right: 45px;
+	@include small-desktop{
+		max-width: 100%;
+		margin-right: 0;
+		margin-bottom: 50px;
+	}
+	@include small-tablet{
+		text-align: center;
+	}
+	&__title{
+		margin: 0 0 41px;
+	}
+}
+
+.testimonials__slider{
+	margin-bottom: 40px;
+	overflow: hidden;
+	border: 1px solid var(--light-gray);
+	&-content{
+		position: relative;
+		margin: 41px 41px 38px;
+		padding-bottom: 73px;
+		@include mobile{
+			margin: 30px 30px 25px;
+		}
+	}
+	&-box{
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding-bottom: 28px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid var(--light-gray);
+		&::after{
+			content: '';
+			background-image: url('../images/svg/quote.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 55px;
+			height: 55px;
+		}
+		@include mobile{
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+	&-img{
+		margin-right: 10px;
+		border-radius: 100px;
+		@include mobile{
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+	&-title{
+		margin: 0;
+		@extend %msh-regular;
+		color: var(--blue-cloud);
+		font-size: 22px;
+		line-height: 1.4;
+		letter-spacing: 0.36px;
+	}
+	&-subtitle{
+		display: block;
+		text-align: left;
+	}
+	&-text, &-highlight{
+		font-family: 'Inter', sans-serif;
+		font-style: italic;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.5;
+		letter-spacing: 0.36px;
+		@include mobile{
+			font-size: 16px;
+		}
+	}
+	&-text{
+		margin: 0;
+		color: var(--gray);
+	}
+	&-highlight{
+		color: var(--blue-cloud);
+	}
+}
+
+.swiper-button-prev, .swiper-button-next{
+	top: unset !important;
+	left: 0 !important;
+	right: unset !important;
+	bottom: 0 !important;
+	margin-top: 0 !important;
+	width: 50px !important;
+	height: 50px !important;
+	color: var(--wild-sand) !important;
+	transition: color .2s ease-in-out;
+	svg{
+		width: 50px;
+		height: 50px;
+		fill: currentColor;
+	}
+	@include small-tablet{
+		right: 0 !important;
+		margin: 0 auto;
+	}
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover{
+	color: var(--yellow-orange) !important;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after{
+	display: none;
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled{
+	opacity: 1 !important;
+}
+
+.swiper-button-prev{
+	@include small-tablet{
+		right: 71px !important;
+	}
+}
+
+.swiper-button-next{
+	left: 71px !important;
+	@include small-tablet{
+		left: 60px !important;
+	}
+}

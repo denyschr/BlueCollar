@@ -1,0 +1,213 @@
+.cost{
+	background-color: var(--wild-sand);
+	padding: 150px 0 135px;
+	@include small-desktop{
+		padding: 90px 0;
+	}
+	@include tablet{
+		padding: 70px 0;
+	}
+	@include mobile{
+		padding: 45px 0;
+	}
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 58px;
+		@include small-desktop{
+			flex-direction: column;
+			justify-content: start;
+			align-items: start;
+		}
+		@include small-tablet{
+			text-align: center;
+		}
+		@include mobile{
+			margin-bottom: 30px;
+		}
+	}
+	&__box{
+		max-width: 500px;
+		@include small-desktop{
+			max-width: 100%;
+			margin-bottom: 20px;
+		}
+		@include mobile{
+			margin-bottom: 10px;
+		}
+	}
+	&__caption{
+		background-color: var(--white) !important;
+	}
+	&__title{
+		margin: 0;
+	}
+	&__text{
+		max-width: 585px;
+		margin: 0;
+		@include small-desktop{
+			max-width: 100%;
+		}
+	}
+}
+
+.cost__inventory{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin-bottom: 62px !important;
+	@include small-desktop{
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include tablet{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	&-item:nth-child(2) .cost__inventory-text{
+		position: relative;
+		padding-top: 39px;
+		&::before{
+			content: 'Popular';
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: inline-block;
+			padding: 0 10px;
+			background-color: var(--yellow-orange);
+			color: var(--blue-cloud);
+			font-size: 16px;
+			line-height: 1.5;
+			letter-spacing: 0.32px;
+			text-transform: uppercase;
+		}
+	}
+	&-content{
+		padding: 40px 40px 50px;
+		background-color: var(--white);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: unset;
+		@include mobile{
+			padding: 30px 30px 40px;
+		}
+	}
+	&-top{
+		padding-bottom: 36px;
+		margin-bottom: 29px;
+		border-bottom: 1px solid var(--alto);
+		@include mobile{
+			padding-bottom: 20px;
+		}
+	}
+	&-box{
+		display: flex;
+		justify-content: space-between;
+		@include mobile{
+			flex-direction: column;
+			justify-content: start;
+		}
+	}
+	&-title, &-subtitle{
+		color: var(--blue-cloud);
+	}
+	&-title{
+		margin: 0 0 7px;
+		@extend %ir-regular;
+		font-size: 20px;
+		line-height: 1.5;
+		letter-spacing: 0.4px;
+		@include mobile{
+			margin: 0 0 12px;
+			font-size: 18px;
+		}
+	}
+	&-subtitle{
+		display: block;
+		@extend %msh-regular;
+		font-size: 32px;
+		line-height: 1.1;
+		letter-spacing: 0.36px;
+		@include mobile{
+			font-size: 26px;
+		}
+	}
+	&-text{
+		align-self: flex-end;
+		text-transform: capitalize;
+		@include mobile{
+			align-self: start;
+		}
+	}
+	&-link{
+		width: 100%;
+		padding: 19px 22px;
+		margin-top: auto;
+		@include mobile{
+			padding: 16px 18px;
+		}
+	}
+}
+
+.cost__roster{
+	margin-bottom: 55px !important;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 20px;
+	@include mobile{
+		margin-bottom: 30px !important;
+	}
+	&-item{
+		position: relative;
+		padding-left: 31px;
+		&::before{
+			content: '';
+			background-image: url('../images/svg/checkmark-transparent.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 19px;
+			height: 19px;
+		}
+	}
+}
+
+.cost__list{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 67px;
+	@include tablet{
+	grid-template-columns: repeat(1, 1fr);
+	gap: 30px;
+	}
+	&-item{
+		position: relative;
+		padding-left: 47px;
+		&::before{
+			content: '';
+			background-image: url('../images/svg/checkmark.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 32px;
+			height: 32px;
+		}
+	}
+	&-title{
+		margin: 0 0 9px;
+		@extend %msh-regular;
+		color: var(--blue-cloud);
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: 0.36px;
+	}
+	&-text{
+		margin: 0;
+	}
+}

@@ -1,0 +1,111 @@
+.feedback{
+	padding: 141px 0 52px;
+	background-color: var(--yellow-orange);
+	@include small-desktop{
+		padding: 80px 0;
+	}
+	@include mobile{
+		padding: 50px 0;
+	}
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		@include tablet{
+			flex-direction: column;
+			justify-content: start;
+			align-items: center;
+			text-align: center;
+		}
+	}
+	&__box{
+		max-width: 410px;
+		margin-right: 20px;
+		@include tablet{
+			max-width: 80%;
+			margin-bottom: 20px;
+			margin-right: 0;
+		}
+		@include mobile{
+			max-width: 100%;
+		}
+	}
+	&__title{
+		margin: 0 0 9px;
+		@extend %msh-regular;
+		color: var(--blue-cloud);
+		font-size: 32px;
+		line-height: 1.4;
+		letter-spacing: 0.36px;
+		@include mobile{
+			font-size: 30px;
+		}
+	}
+	&__text{
+		margin: 0;
+		color: var(--blue-cloud) !important;
+	}
+}
+
+.feedback__form{
+	display: flex;
+	align-items: center;
+	max-width: 570px;
+	width: 100%;
+	padding-top: 10px;
+	@include tablet{
+		max-width: 80%;
+	}
+	@include mobile{
+		max-width: 100%;
+		flex-direction: column;
+		align-items: start;
+	}
+	&-input{
+		padding: 20px 25px;
+		min-height: 68px;
+		flex-grow: 1;
+		background-color: transparent;
+		border: 2px solid var(--white);
+		border-right: none;
+		color: var(--blue-cloud);
+		transition: border .2s ease-in-out;
+		&::placeholder{
+			@extend %ir-regular;
+			color: var(--white);
+		}
+		&:focus{
+			border: 1px solid var(--picton-blue);
+			outline: 0;
+			border-right: none;
+		}
+		@include mobile{
+			width: 100%;
+			margin-bottom: 10px;
+			border-right: 2px solid var(--white);
+		}
+	}
+	&-input::placeholder, &-btn{
+		font-size: 17px;
+		line-height: 1.5;
+		letter-spacing: 0.36px;
+	}
+	&-btn{
+		padding: 18px 20px;
+		max-width: 180px;
+		width: 100%;
+		border: 2px solid var(--white);
+		background-color: var(--white);
+		cursor: pointer;
+		color: var(--blue-cloud);
+		transition: background .1s ease-in-out, border .1s ease-in-out, color .1s ease-in-out;
+		&:hover{
+			background-color: var(--blue-cloud);
+			border: 2px solid var(--blue-cloud);
+			color: var(--white);
+		}
+		@include mobile{
+			max-width: 100%;
+		}
+	}
+}

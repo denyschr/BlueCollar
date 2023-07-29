@@ -1,0 +1,56 @@
+@mixin burger {
+  --burger-width: 60px;
+  --burger-height: 60px;
+  --burger-line-width: 16px;
+  --burger-line-height: 2px;
+
+  position: relative;
+  z-index: 11;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  color: var(--white);
+  background-color: var(--yellow-orange);
+  border: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: var(--burger-line-width);
+    height: var(--burger-line-height);
+    border-radius: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::after {
+    top: 42%;
+    transform: translateY(-42%);
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 58%;
+    transform: translateY(-57%);
+    margin: 0 auto;
+    width: var(--burger-line-width);
+    height: var(--burger-line-height);
+    border-radius: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &--active {
+    background-color: var(--blue-cloud);
+    color: var(--yellow-orange);
+  }
+}

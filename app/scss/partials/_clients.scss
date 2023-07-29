@@ -1,0 +1,40 @@
+.clients{
+	padding-bottom: 146px;
+	@include tablet{
+		padding-bottom: 90px;
+	}
+	@include mobile{
+		padding-bottom: 60px;
+	}
+	&__top{
+		margin-bottom: 44px;
+		text-align: center;
+	}
+	&__title{
+		margin: 0;
+	}
+}
+
+.clients__list{
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 142px;
+	padding: 0 65px;
+	@include tablet{
+		grid-template-columns: repeat(2, 1fr);
+		gap: 40px;
+	}
+	@include mobile{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	&-img{
+		@include tablet{
+			margin: 0 auto;
+			width: 70%;
+		}
+		@include mobile{
+			width: 40%;
+		}
+	}
+}

@@ -1,0 +1,68 @@
+.appointment{
+	flex-grow: 1;
+	@include small-tablet{
+		text-align: center;
+	}
+	&__title{
+		margin: 0 0 39px;
+	}
+}
+
+.form{
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	padding: 70px 40px 75px;
+	background-color: var(--wild-sand);
+	@include mobile{
+		padding: 50px 25px;
+	}
+	&__input, &__textarea{
+		padding: 19px 22px 19px 44px;
+		border: 1px solid #CCC;
+		background-color: var(--white);
+		transition: border .2s ease-in-out;
+		@include mobile{
+			padding: 19px 22px 19px 30px;
+		}
+	}
+	&__input::placeholder, &__textarea::placeholder{
+		@extend %ir-regular;
+		color: var(--blue-cloud);
+		font-size: 18px;
+		line-height: 1.5;
+		letter-spacing: 0.36px;
+		text-transform: capitalize;
+		@include mobile{
+			font-size: 16px;
+		}
+	}
+	&__textarea{
+		resize: none;
+		min-height: 150px;
+	}
+	&__input:focus, &__textarea:focus{
+		border: 1px solid var(--picton-blue);
+		outline: 0;
+	}
+	&__btn{
+		margin-top: 10px;
+		padding: 20px;
+		cursor: pointer;
+		border: 2px solid var(--yellow-orange);
+		background-color: var(--yellow-orange);
+		color: var(--blue-cloud);
+		font-family: 'Inter', sans-serif;
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 1.5;
+		letter-spacing: 0.36px;
+		transition: background .1s ease-in-out;
+		&:hover{
+			background-color: var(--white);
+		}
+		@include mobile{
+			padding: 18px;
+		}
+	}
+}

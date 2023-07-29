@@ -1,0 +1,140 @@
+.why-choose{
+	background-color: var(--white);
+	@include big-desktop{
+		padding-bottom: 60px;
+	}
+	&__inner{
+		display: flex;
+		align-items: center;
+		padding-right: max(15px, calc((100% - 1200px) / 2));
+		@include big-desktop{
+			flex-direction: column;
+			align-items: start;
+			padding-right: 0;
+		}
+	}
+	&__wrapper-box{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		padding: 140px 80px;
+		width: calc(100% - 577px - 70px);
+		min-height: 848px;
+		@include big-desktop{
+			width: 100%;
+			background-position: center 0;
+			margin-bottom: 50px;
+		}
+		@include small-tablet{
+			min-height: 690px;
+			padding: 70px 20px;
+		}
+		@include mobile{
+			padding: 0;
+		}
+	}
+	&__achievements{
+		padding: 100px 80px 124px;
+		background: rgba(28, 39, 82, 0.86);
+		@include small-tablet{
+			padding: 80px;
+		}
+	}
+	&__content{
+		max-width: 577px;
+		margin-left: 70px;
+		@include big-desktop{
+			max-width: 100%;
+			padding: 0 15px;
+			margin-left: 0;
+		}
+	}
+	&__title{
+		margin: 0 0 11px;
+	}
+	&__text{
+		margin: 0 0 37px;
+	}
+}
+
+.why-choose__inventory{
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+	&-item{
+		display: flex;
+		align-items: center;
+		@include mobile{
+			flex-direction: column;
+			align-items: center
+			
+		}
+	}
+	&-num, &-heading{
+		@extend %msh-regular;
+		line-height: 1.4; 
+		letter-spacing: 0.36px;
+	}
+	&-num{
+		max-width: 110px;
+		width: 100%;
+		padding: 16px 21px;
+		text-align: left;
+		border: 1px solid var(--yellow-orange);
+		background-color: var(--yellow-orange);
+		color: var(--blue-cloud);
+		font-size: 24px;
+		@include mobile{
+			max-width: 100%;
+			text-align: center;
+			font-size: 17px;
+		}
+	}
+	&-heading{
+		width: 100%;
+		padding: 16px 20px;
+		border: 1px solid var(--white);
+		border-left: none;
+		color: var(--white);
+		font-size: 25px;
+		@include mobile{
+			border-left: 1px solid var(--white);
+			text-align: center;
+			font-size: 18px;
+		}
+	}
+}
+
+.why-choose__list{
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 32px;
+	&-title{
+		position: relative;
+		margin: 0 0 8px;
+		padding-left: 52px;
+		@extend %msh-regular;
+		color: #1C2752;
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: 0.36px;
+		&::before{
+			content: '';
+			background-image: url('../images/svg/checkmark.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 32px;
+			height: 32px;
+		}
+	}
+	&-text{
+		padding-left: 52px;
+		margin: 0;
+	}
+}

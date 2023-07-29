@@ -1,0 +1,176 @@
+@import "./mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+body {
+  @extend %ir-regular;
+  background-color: var(--white);
+}
+
+body.noscroll{
+  overflow: hidden;
+}
+
+.container{
+  max-width: var(--container-width);
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.list-reset{
+  margin: 0;
+  padding: 0;
+}
+
+.mail-link, .call-link, .location-link{
+  position: relative;
+  transition: color .2s ease-in-out;
+  padding-left: 83px;
+  @extend %ir-regular;
+  color: var(--gray);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.36px;
+  text-transform: lowercase;
+}
+
+.mail-link:hover, .call-link:hover, .location-link:hover{
+  color: var(--yellow-orange) !important;
+}
+
+.mail-link::before, .call-link::before, .location-link::before{
+  content: '';
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 68px;
+  height: 68px;
+}
+
+.mail-link::before{
+  background-image: url('../images/svg/mail.svg');
+}
+
+.call-link::before{
+  background-image: url('../images/svg/call.svg');
+}
+
+.location-link::before{
+  background-image: url('../images/svg/location.svg');
+}
+
+.mail-link__caption, .call-link__caption, .location-link__caption{
+  display: block;
+  @extend %msh-regular;
+  color: var(--blue-cloud);
+  font-size: 20px;
+  line-height: 1.3; 
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.btn-main{
+  display: inline-block;
+  text-align: center;
+  border: 2px solid var(--yellow-orange);
+  background-color: var(--yellow-orange);
+  color: var(--bluecloud);
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.36px;
+  transition: background .1s ease-in-out;
+  text-transform: capitalize;
+  &:hover{
+    background-color: var(--white);
+  }
+  @include small-tablet{
+    font-size: 16px;
+  }
+}
+
+.section-caption{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px 10px 53px;
+  margin-bottom: 22px;
+  color: var(--blue-cloud);
+  background-color: var(--wild-sand);
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+  &::before{
+    content: '';
+    background-image: url('../images/svg/notebook.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 27px;
+  }
+  @include small-tablet{
+    margin-bottom: 15px;
+  }
+  @include mobile{
+    font-size: 16px;
+  }
+}
+
+.section-title {
+  @extend %msh-regular;
+  color: var(--blue-cloud);
+  font-size: 45px;
+  line-height: 1.3;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+  @include small-tablet{
+    font-size: 36px;
+  }
+  @include mobile{
+    font-size: 30px;
+  }
+}
+
+.text{
+  color: var(--gray);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: 0.36px;
+  @include mobile{
+    font-size: 16px;
+  }
+}
