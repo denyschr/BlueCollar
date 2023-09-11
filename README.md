@@ -1,4 +1,4 @@
-# [Landing page](https://dchornoivanenko.github.io/BlueCollar/) for the service company
+# [Landing page](https://denyschr.github.io/BlueCollar/) for the service company
 ## What I used for creating the website:
 - HTML
 - CSS
